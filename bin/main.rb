@@ -86,7 +86,13 @@ while session
       select1 = cell_check(cell, select1, arr)
     end
     turn += 2
-  
+  else
+    puts "It's a TIE"
+    puts
+    puts 'Game over'
+    puts "Congratulations #{p1}, you win this round."
+    puts
+    puts "Try again next time, #{p2}"
     break
   end
 end
