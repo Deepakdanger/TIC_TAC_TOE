@@ -12,17 +12,33 @@ def display_board(board)
       +---+---+---+"
   puts s
 end
+def name_check(p1)
+  if p1.length==0
+    p "'Name' should not be blank"
+    return false
+  else
+    return true
+  end
+end
 
 puts 'Welcome to Tic-Tac-Toe v1.0'
 puts 'Press Enter to continue_'
 blank = gets.chomp
 puts 'Welcome, player 1'
 puts 'Please input your game name...'
-p1 = gets.chomp.upcase
+select1 = false
+while select1 == false
+  p1 = gets.chomp
+  select1 = name_check(p1)
+end
 puts
 puts 'Welcome, player 2'
 puts 'Please input your game name...'
-p2 = gets.chomp.upcase
+select1 = false
+while select1 == false
+  p2 = gets.chomp
+  select1 = name_check(p2)
+end
 puts
 puts "#{p1} plays with 'X' and #{p2} plays with 'O'"
 puts
