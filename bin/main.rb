@@ -75,28 +75,31 @@ arr2 = []
 session = true
 turn = 0
 while session
-  checklist=Logic.new
-  if turn <= 7
-    board[cell-1]='O'
-    display_board(board)
+  checklist = Logic.new
+  if turn <=7
+   
     puts "#{@p1}: Please choose a cell number "
     select1 = false
     while select1 == false
       cell = gets.chomp.to_i
       select1 = cell_check(cell, @p1, arr1,arr2)      
-      p arr1
     end
+    
     board[cell-1]='X'
     display_board(board)
+    
 
     puts "#{@p2}: Please choose a cell number "
     select1 = false
     while select1 == false
       cell = gets.chomp.to_i
       select1 = cell_check(cell, @p2, arr1,arr2)      
-      p arr2
     end
+    board[cell-1]='O'
+    display_board(board)
+    
     turn += 2
+    
   else
     puts "It's a TIE"
     puts
