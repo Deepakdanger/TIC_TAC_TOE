@@ -12,18 +12,18 @@ def display_board(board)
       +---+---+---+"
   puts s
 end
-def name_check(p1)
-  if p1.length==0
+
+def name_check(person)
+  if person.length.zero?
     p "'Name' should not be blank"
-    return false
+    false
   else
-    return true
+    true
   end
 end
 
 puts 'Welcome to Tic-Tac-Toe v1.0'
 puts 'Press Enter to continue_'
-blank = gets.chomp
 puts 'Welcome, player 1'
 puts 'Please input your game name...'
 select1 = false
