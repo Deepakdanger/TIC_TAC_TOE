@@ -47,7 +47,7 @@ puts
 puts 'Let us get right to it!'
 puts
 puts
-display_board(board)
+# display_board(board)
 puts
 puts
 
@@ -67,19 +67,26 @@ end
 
 arr = []
 session = true
-
+turn = 0
 while session
-  puts "#{p1}: Please choose a cell number "
-  select1 = false
-  while select1 == false
-    cell = gets.chomp.to_i
-    select1 = cell_check(cell, select1, arr)
-  end
+  if turn <= 7
+    display_board(board)
+    puts "#{p1}: Please choose a cell number "
+    select1 = false
+    while select1 == false
+      cell = gets.chomp.to_i
+      select1 = cell_check(cell, select1, arr)
+    end
+    display_board(board)
 
-  puts "#{p2}: Please choose a cell number "
-  select1 = false
-  while select1 == false
-    cell = gets.chomp.to_i
-    select1 = cell_check(cell, select1, arr)
+    puts "#{p2}: Please choose a cell number "
+    select1 = false
+    while select1 == false
+      cell = gets.chomp.to_i
+      select1 = cell_check(cell, select1, arr)
+    end
+    turn += 2
+  
+    break
   end
 end
