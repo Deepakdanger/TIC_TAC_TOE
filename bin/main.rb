@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+require_relative "../lib/logic"
+
 
 board = %w[1 2 3 4 5 6 7 8 9]
 
@@ -28,19 +30,19 @@ puts 'Welcome, player 1'
 puts 'Please input your game name...'
 select1 = false
 while select1 == false
-  p1 = gets.chomp
-  select1 = name_check(p1)
+  @p1 = gets.chomp
+  select1 = name_check(@p1)
 end
 puts
 puts 'Welcome, player 2'
 puts 'Please input your game name...'
 select1 = false
 while select1 == false
-  p2 = gets.chomp
-  select1 = name_check(p2)
+  @p2 = gets.chomp
+  select1 = name_check(@p2)
 end
 puts
-puts "#{p1} plays with 'X' and #{p2} plays with 'O'"
+puts "#{@p1} plays with 'X' and #{@p2} plays with 'O'"
 puts
 puts 'INSTRUCTION!!!:Input the corresponding cell number in which you want to place your piece when prompted'
 puts
@@ -51,48 +53,57 @@ puts
 puts
 puts
 
-def cell_check(cell, select1, arr)
-  if arr.include? cell
+def cell_check(cell,person, arr1,arr2)
+  if (arr1.include? cell) || (arr2.include? cell )
     puts 'Cell position has been taken, select a new cell'
-    select1
+    false
   elsif (1..9).include? cell
-    arr << cell
+    if person == @p1
+      arr1 << cell
+    else
+      arr2 << cell
+    end
     true
-
   else
     puts 'Invalid selection, Please enter a valid number between 1-9'
-    select1
+    false
   end
 end
 
-arr = []
+arr1 = []
+arr2 = []
 session = true
 turn = 0
 while session
+  checklist=Logic.new
   if turn <= 7
+    board[cell-1]='O'
     display_board(board)
-    puts "#{p1}: Please choose a cell number "
+    puts "#{@p1}: Please choose a cell number "
     select1 = false
     while select1 == false
       cell = gets.chomp.to_i
-      select1 = cell_check(cell, select1, arr)
+      select1 = cell_check(cell, @p1, arr1,arr2)      
+      p arr1
     end
+    board[cell-1]='X'
     display_board(board)
 
-    puts "#{p2}: Please choose a cell number "
+    puts "#{@p2}: Please choose a cell number "
     select1 = false
     while select1 == false
       cell = gets.chomp.to_i
-      select1 = cell_check(cell, select1, arr)
+      select1 = cell_check(cell, @p2, arr1,arr2)      
+      p arr2
     end
     turn += 2
   else
     puts "It's a TIE"
     puts
     puts 'Game over'
-    puts "Congratulations #{p1}, you win this round."
+    puts "Congratulations #{@p1}, you win this round."
     puts
-    puts "Try again next time, #{p2}"
+    puts "Try again next time, #{@p2}"
     break
   end
 end
