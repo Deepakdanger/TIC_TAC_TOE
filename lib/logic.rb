@@ -16,7 +16,7 @@ class Logic
       puts "Congratulations,#{per} wins the game!"
       true
     elsif win.include? param2
-      puts "Congratulations,#{per} wins the game!"
+      puts "Congratulations,#{per} win the game!"
       true
     else
       false
