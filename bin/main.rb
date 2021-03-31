@@ -85,17 +85,22 @@ while session
   end
   board[cell - 1] = 'X'
   display_board(board)
+  puts
+  puts
   param1 = checklist.get_param1(arr1)
 
   winner = checklist.check_win(param1, param2, @p1)
 
   if winner == true
-    p 'GAME OVER'
+    puts "Congratulations,#{@p1} wins the game!"
+    puts
+    puts 'GAME OVER'
     break
   end
 
   if turn == 9
     puts 'This game has ended in a TIE!'
+    puts
     puts 'GAME OVER'
     break
   end
@@ -109,13 +114,16 @@ while session
   end
   board[cell - 1] = 'O'
   display_board(board)
+  puts
+  puts
   param2 = checklist.get_param2(arr2)
   param2 = param2.flatten
   winner = checklist.check_win(param1, param2, @p2)
 
   if winner == true
-    p 'GAME OVER'
+    puts "Congratulations,#{@p2} wins the game!"
+    puts
+    puts 'GAME OVER'
     break
   end
-
 end

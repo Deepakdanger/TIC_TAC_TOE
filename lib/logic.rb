@@ -13,10 +13,8 @@ class Logic
 
   def check_win(param1, param2, per)
     if win.include? param1.flatten
-      puts "Congratulations,#{per} wins the game!"
       true
     elsif win.include? param2
-      puts "Congratulations,#{per} win the game!"
       true
     else
       false
