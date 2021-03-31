@@ -11,13 +11,11 @@ class Logic
     win.map { |a| a.intersection(arr2.sort) }.select { |a| a.length == 3 }
   end
 
-  def check_win(param1, param2, per)
+  def check_win(param1, param2, _per)
     if win.include? param1.flatten
       true
-    elsif win.include? param2
-      true
     else
-      false
+      win.include? param2
     end
   end
 end

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require_relative '../lib/logic'
-
+require_relative '../lib/player'
 board = %w[1 2 3 4 5 6 7 8 9]
 
 def display_board(board)
@@ -13,24 +13,15 @@ def display_board(board)
       +---+---+---+"
   puts s
 end
-
-def name_check(person)
-  if person.length.zero?
-    p "'Name' should not be blank"
-    false
-  else
-    true
-  end
-end
-
 puts 'Welcome to Tic-Tac-Toe v1.0'
-puts 'Press Enter to continue_'
+player1 = Player.new
 puts 'Welcome, player 1'
 puts 'Please input your game name...'
 select1 = false
 while select1 == false
   @p1 = gets.chomp.upcase
-  select1 = name_check(@p1)
+  select1 = player1.name_check(@p1)
+  p 'NAME SHOULD NOT BE BLANK' if select1 == false
 end
 puts
 puts 'Welcome, player 2'
@@ -38,7 +29,8 @@ puts 'Please input your game name...'
 select1 = false
 while select1 == false
   @p2 = gets.chomp.upcase
-  select1 = name_check(@p2)
+  select1 = player1.name_check(@p2)
+  p 'NAME SHOULD NOT BE BLANK' if select1 == false
 end
 puts
 puts "#{@p1} plays with 'X' and #{@p2} plays with 'O'"
@@ -120,10 +112,10 @@ while session
   param2 = param2.flatten
   winner = checklist.check_win(param1, param2, @p2)
 
-  if winner == true
-    puts "Congratulations,#{@p2} wins the game!"
-    puts
-    puts 'GAME OVER'
-    break
-  end
+  next unless winner == true
+
+  puts "Congratulations,#{@p2} wins the game!"
+  puts
+  puts 'GAME OVER'
+  break
 end
