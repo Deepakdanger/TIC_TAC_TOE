@@ -48,7 +48,7 @@ puts
 puts 'Let us get right to it!'
 puts
 puts
-# display_board(board)
+display_board(board)
 puts
 puts
 
@@ -95,7 +95,7 @@ while session
   end
 
   if turn == 9
-    puts 'GAME IS TIE'
+    puts 'This game has ended in a TIE!'
     puts 'GAME OVER'
     break
   end
@@ -110,7 +110,7 @@ while session
   board[cell - 1] = 'O'
   display_board(board)
   param2 = checklist.get_param2(arr2)
-
+  param2 = param2.flatten
   winner = checklist.check_win(param1, param2, @p2)
 
   if winner == true
