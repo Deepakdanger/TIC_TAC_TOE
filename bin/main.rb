@@ -69,27 +69,40 @@ def cell_check(cell,person, arr1,arr2)
     false
   end
 end
-
+param2=[]
 arr1 = []
 arr2 = []
 session = true
 turn = 0
 while session
   checklist = Logic.new
-  if turn <=7
-   
+    
     puts "#{@p1}: Please choose a cell number "
+    turn+=1
     select1 = false
     while select1 == false
       cell = gets.chomp.to_i
       select1 = cell_check(cell, @p1, arr1,arr2)      
-    end
-    
+    end    
     board[cell-1]='X'
     display_board(board)
+    param1=checklist.get_param1(arr1)
     
+    winner=checklist.check_win(param1, param2, @p1)
+    
+    if winner ==true
+      p "GAME OVER"
+      break
+    end
+
+    if turn==9
+      puts "GAME IS TIE"
+      puts "GAME OVER"
+      break
+    end
 
     puts "#{@p2}: Please choose a cell number "
+    turn+=1
     select1 = false
     while select1 == false
       cell = gets.chomp.to_i
@@ -97,16 +110,15 @@ while session
     end
     board[cell-1]='O'
     display_board(board)
+    param2=checklist.get_param2(arr2)
     
-    turn += 2
+    winner=checklist.check_win(param1, param2, @p2)
     
-  else
-    puts "It's a TIE"
-    puts
-    puts 'Game over'
-    puts "Congratulations #{@p1}, you win this round."
-    puts
-    puts "Try again next time, #{@p2}"
-    break
-  end
+    if winner ==true
+      p "GAME OVER"
+      break
+    end    
+    
+    
+ 
 end
