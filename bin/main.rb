@@ -29,7 +29,7 @@ puts 'Welcome, player 1'
 puts 'Please input your game name...'
 select1 = false
 while select1 == false
-  @p1 = gets.chomp
+  @p1 = gets.chomp.upcase
   select1 = name_check(@p1)
 end
 puts
@@ -37,7 +37,7 @@ puts 'Welcome, player 2'
 puts 'Please input your game name...'
 select1 = false
 while select1 == false
-  @p2 = gets.chomp
+  @p2 = gets.chomp.upcase
   select1 = name_check(@p2)
 end
 puts
