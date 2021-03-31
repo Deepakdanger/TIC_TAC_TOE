@@ -21,7 +21,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Game Instructions
 
-1. The game is played on a grid that is 3 squares by 3 squares.
+1. The game is played on a grid that is 3 X 3 squares.
 2. Player 1 is assigned "X" and Player 2 is assigned "0".
 
 3. Both players take turns choosing a board number position and their marks will replace the numbers on the board
