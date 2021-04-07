@@ -8,7 +8,7 @@ describe 'Logic' do
   describe 'get_param1 method' do
     let(:arr) { [1, 9, 2, 8] }
     let(:arr1) { [1, 2, 5, 8] }
-    it 'should return empty array' do
+    it 'should return empty array if array does not match while mapping' do
       expect(checklist.get_param1(arr)).to eql([])
     end
 
@@ -20,7 +20,7 @@ describe 'Logic' do
   describe 'get_param2 method' do
     let(:arr) { [2, 4, 7, 8] }
     let(:arr1) { [1, 2, 5, 8] }
-    it 'should return empty array' do
+    it 'should return empty array if array does not match while mapping' do
       expect(checklist.get_param2(arr)).to eql([])
     end
 

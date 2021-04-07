@@ -29,7 +29,10 @@ To get a local copy up and running follow these simple example steps.
 
 5. When all 9 squares are replaced with the signs, the game is over. If no player has 3 marks in a row, the game ends in a tie.
 
-
+## Rspec checking 
+1. To Check board:-"rspec spec/spec_board.rb "
+2. To Check player:-"rspec spec/spec_player.rb"
+3. To Check logic:-"rspec spec/spec_logic.rb" 
 
 ## Authors
 
