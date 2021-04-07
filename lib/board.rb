@@ -1,7 +1,7 @@
 class Check
   def display_board(board)
-    " +---+---+---+
-    | #{board[0]} | #{board[1]} | #{board[2]} |
+    "     +---+---+---+
+     | #{board[0]} | #{board[1]} | #{board[2]} |
      +---+---+---+
      | #{board[3]} | #{board[4]} | #{board[5]} |
      +---+---+---+
@@ -18,7 +18,7 @@ class Check
       else
         arr2 << cell
       end
-      true
+      return true
     end
     false
   end
