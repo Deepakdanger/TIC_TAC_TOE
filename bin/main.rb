@@ -53,6 +53,7 @@ while session
     num = 1
     cell = gets.chomp.to_i
     select1 = check1.cell_check(cell, num, arr1, arr2)
+    puts 'Cell position has been taken or Invalid' if select1 == false
   end
   board[cell - 1] = 'X'
   puts check1.display_board(board)
@@ -84,6 +85,7 @@ while session
     num = 2
     cell = gets.chomp.to_i
     select1 = check1.cell_check(cell, num, arr1, arr2)
+    puts 'Cell position has been taken or Invalid' if select1 == false
   end
   board[cell - 1] = 'O'
   puts check1.display_board(board)

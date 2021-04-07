@@ -11,7 +11,6 @@ class Check
 
   def cell_check(cell, person, arr1, arr2)
     if (arr1.include? cell) || (arr2.include? cell)
-      puts 'Cell position has been taken, select a new cell'
       false
     elsif (1..9).include? cell
       if person == 1
@@ -20,9 +19,7 @@ class Check
         arr2 << cell
       end
       true
-    else
-      puts 'Invalid selection, Please enter a valid number between 1-9'
-      false
     end
+    false
   end
 end
