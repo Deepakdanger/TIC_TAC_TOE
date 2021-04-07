@@ -39,11 +39,4 @@ describe 'Board' do
       expect(check1.cell_check(cell5, person, arr, arr3)).to be true
     end
   end
-
-  describe 'display_board method' do
-    let(:arr) { [1, 2, 3, 4, 5, 6, 7, 8, 9] }
-    it 'to display the board' do
-      expect(check1.display_board(arr3)).to eql
-    end
-  end
 end
