@@ -1,6 +1,6 @@
-include RSpec
 require_relative '../lib/player'
 require 'rspec'
+# To Run "rspec spec/spec_player.rb"
 
 describe Player do
   player = Player.new

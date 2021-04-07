@@ -1,6 +1,6 @@
-include RSpec
 require_relative '../lib/logic'
 require 'rspec'
+# To Run "rspec spec/spec_logic.rb"
 
 describe 'Logic' do
   let(:arr5) { [] }
