@@ -12,7 +12,7 @@ class Logic
   end
 
   def check_win(param1, param2, _per)
-    if win.include? param1.flatten
+    if win.include? param1
       true
     else
       win.include? param2

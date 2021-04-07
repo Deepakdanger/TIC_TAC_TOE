@@ -80,7 +80,8 @@ while session
   puts
   puts
   param1 = checklist.get_param1(arr1)
-
+  param1 = param1.flatten
+  p param1
   winner = checklist.check_win(param1, param2, @p1)
 
   if winner == true
@@ -110,6 +111,7 @@ while session
   puts
   param2 = checklist.get_param2(arr2)
   param2 = param2.flatten
+  p param2
   winner = checklist.check_win(param1, param2, @p2)
 
   next unless winner == true
